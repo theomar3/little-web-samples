@@ -49,6 +49,10 @@ table {
 
 /*end of reset*/
 
+/*=========================*/
+/*top section*/
+/*===============================*/
+
 body{
   font-family: sans-serif;
 }
@@ -103,6 +107,10 @@ h1{
   border-radius: 7px;
 }
 
+/*===============================*/
+/*Stats*/
+/*===============================*/
+
 .stats{
 	text-align: center;
 	padding: 20px 0 0 0;
@@ -150,4 +158,54 @@ h1{
 .energy-points{
 	color: #888;
 
+}
+
+/*=====================*/
+/*close to earning*/
+/*=====================*/
+
+.close-to-earning{
+	border-top: solid 1px gray;
+	width: 600px;
+	margin: 20px auto 0 auto;
+	padding: 30px 0 0 0;
+}
+
+.close-to-earning h2{
+	font-weight: bold;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	margin: 0 0 20px 0;
+}
+
+.badge{
+	display: inline-block;
+	border: solid 15px rgb(236,10,75);
+	width: 90px;
+	height: 90px;
+	border-radius: 100%;
+	font-size: 4.5em;
+	background-color: rgb(175,44,28);
+	color: rgb(249,227,210);
+	font-weight: bold;
+	line-height: 1.1em;
+}
+
+
+
+
+.badge-talk{
+	display: inline-block;
+	width: 270px;
+	text-align: left;
+	padding: 0 0 0 30px;
+}
+
+.badge-talk p{
+	line-height: 1.4em;
+}
+
+.badge-talk .second{
+	font-weight: bold;
+	font-style: italic;
 }
