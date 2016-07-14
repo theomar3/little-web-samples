@@ -1,0 +1,153 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*end of reset*/
+
+body{
+  font-family: sans-serif;
+}
+
+.container{
+  width: 768px;
+  border: solid 6px rgb(222, 222, 222);
+}
+
+header{
+  background-color: rgb(39,48,63);
+  color: white;
+  padding: 10px;
+}
+
+h1{
+  text-align: center;
+  font-size: 2em;
+  font-weight:lighter;
+}
+
+.khan{
+  font-weight: bold;
+}
+
+.message{
+  background-color: rgb(240,240,240);
+  padding: 50px 50px 35px 50px;
+}
+
+.message .name{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+
+}
+
+.message p{
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+
+.message .cta{
+  background-color: rgb(115,164,0);
+  display:block;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 7px;
+}
+
+.stats{
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+
+.week-stats{
+	display: inline-block;
+	width: 200px;
+	text-transform: uppercase;
+}
+
+.week{
+	font-weight: bold;
+	color: #888;
+}
+
+.stats-value{
+	color: white;
+	font-size: 4em;
+	border-radius: 10px;
+	padding: 10px 15px;;
+	display: inline-block;
+	margin: 30px 0 15px 0;
+}
+
+.stats-value .plus{
+	font-size: 2rem;
+	position: relative;
+	bottom: 10px;
+	right: 7px;
+}
+
+.two-weeks-ago .stats-value{
+	background-color: rgb(133,181,200);
+}
+
+.last-week .stats-value{
+	background-color: rgb(12,109,146);
+}
+
+.last-week .week{
+	color: black;
+}
+
+.energy-points{
+	color: #888;
+
+}
