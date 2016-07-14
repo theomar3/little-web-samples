@@ -1,0 +1,182 @@
+/*================
+CSS reset code
+===============*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*==============
+end of reset
+==============*/
+
+/*================*/
+/*page set up*/
+/*===================*/
+
+body{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 200px;
+  font-family: sans-serif;
+}
+
+.outer-border{
+  width: 290px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+
+}
+
+.inner-border{
+  width: 270px;
+  background-color: #fffaf0;
+  padding: 25px 10px 20px 0;
+}
+
+
+
+/*==================*/
+/*header section*/
+/*====================*/
+
+header h1{
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/*=========================*/
+/*Main sections*/
+/*=========================*/
+
+.coupon, .offer, .renewal{
+  border-top: solid 1px #d3d3d3;
+  width: 230px;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+
+.dollar{
+  display: inline-block;
+  position: absolute;
+  right: 585px;
+}
+
+.title, .explanation, .extra-info, .offer-title{
+  width: 200px;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.title{
+  padding-top: 8px;
+  font-size: .80em;
+  font-weight: bold;
+  position: absolute;
+  top:280px;
+}
+
+.explanation{
+  font-size: .80em;
+  margin-top: 15px;
+  line-height: 18px;
+}
+
+.extra-info{
+  font-size:.75em;
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.gift{
+  position: relative;
+  top: 10px;
+
+}
+
+.offer-title{
+  font-size: .80em;
+  font-weight: bold;
+  position: absolute;
+  top:420px;
+}
+
+.offer-explanation{
+  font-size: .80em;
+  display: inline-block;
+  margin-top: -200px;
+  margin-left: 60px;
+  line-height: 18px;
+  width: 190px;
+  margin-bottom: 30px;
+
+}
+
+.renewal-title{
+  font-size: .80em;
+  font-weight: bold;
+  position: absolute;
+  top:530px;
+  left: 240px;
+  padding-top: 10px;
+}
+
+.renewal-explanation{
+  position: absolute;
+  bottom: 170px;
+  right: 395px;
+  width: 180px;
+
+}
+
+.calendar{
+  margin-top: 10px;
+}
