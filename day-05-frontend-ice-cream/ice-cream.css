@@ -1,0 +1,287 @@
+/*CSS Reset*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*================*/
+/*end of reset*/
+/*================*/
+
+/*===============*/
+/*page stuff*/
+/*===============*/
+
+.body{
+  width: 2000px;
+  margin: 0 auto;
+}
+
+.container{
+  border: solid 1px blue;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/*============*/
+/*header */
+/*============*/
+
+header h1{
+  font-family: georgia, lucida grande;
+  position: relative;
+  border: solid 1px pink;
+
+
+}
+
+.wild, .about, .omar{
+  width: 180px;
+  outline: solid black 1px;
+
+}
+
+.wild{
+  color: #BF037D;
+  font-size: 3em;
+  padding-top: 20px;
+
+}
+
+.about{
+  color:#1121A5;
+  font-size: 2.3em;
+  margin-left: 20px;
+
+}
+
+.omar{
+  color: #BF037D;
+  font-size: 3rem;
+  /*position: absolute;
+  left: 30px;
+  top: 80px;*/
+  margin-left: 35px;
+}
+
+header img{
+  display: inline-block;
+  margin-left: 770px;
+  position: absolute;
+  top: 2px;
+}
+
+/*=================*/
+/*main section*/
+/*=================*/
+
+.main-section h1{
+  font-size: 1.3em;
+  color:#F204B2;
+  margin-top: 90px;
+  position: relative;
+
+}
+
+.main-section img{
+  outline: solid 1px red;
+
+}
+
+.thesis{
+  display: inline-block;
+  font-weight: bold;
+  color: #1121A5;
+  position: absolute;
+  font-family: tahoma;
+  font-size: .80em;
+  margin-left: 5px;
+
+}
+
+.main-section p{
+  font-family: tahoma;
+  display: inline-block;
+  font-size: .80em;
+  width: 390px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 5px;
+  line-height: 30px;
+}
+
+/*============================*/
+/*store hours and contact*/
+/*============================*/
+
+.hours {
+  display: inline-block;
+  font-weight: bold;
+  color: #1121A5;
+  position: absolute;
+  font-family: tahoma;
+  margin-left: 5px;
+  margin-top: 200px;
+}
+
+.days, .number-address{
+  color: #F204B2;
+}
+
+.contact{
+  display: inline-block;
+  font-weight: bold;
+  color: #1121A5;
+  font-family: tahoma;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 340px;
+}
+
+/*=========*/
+/*menu*/
+/*=========*/
+
+.menu h1{
+  margin-top: 80px;
+  font-size: 2.5em;
+  color:#F204B2;
+  margin-top: 90px;
+  position: relative;
+}
+
+.classics h3{
+  margin-top: 30px;
+  font-family: Baskerville;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.classics ul{
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-family: Baskerville;
+}
+
+.classics ul li{
+  padding-bottom: 10px;
+}
+
+.classics ul li:first-child a:hover {
+  background-color: #ffffe0;
+  color: black;
+}
+
+.classics ul li:last-child a:hover {
+  background-color: red;
+}
+
+ul li:first-child{
+  background-color: #1121A5;
+  color: white;
+}
+
+ul li:last-child{
+  background-color:#BF037D;
+  color: white;
+}
+
+.exotics h3{
+  margin-top: 30px;
+  font-family: Monaco;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.exotics ul{
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-family: Monaco;
+}
+
+.exotics ul li{
+  padding-bottom: 10px;
+}
+
+.exotics ul li:first-child a:hover {
+  background-color: orange;
+}
+
+.exotics ul li:last-child a:hover {
+  background-color: green;
+}
+
+.adventurous h3{
+  margin-top: 30px;
+  font-family: Papyrus;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.adventurous ul{
+  margin-top: 10px;
+  font-size: 1.3em;
+  font-family: Papyrus;
+}
+
+.adventurous ul li{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.adventurous ul li:first-child a:hover {
+  background-color: brown;
+}
+
+.adventurous ul li:last-child a:hover {
+  background-color: purple;
+}
+
+a{
+  color: white;
+}
