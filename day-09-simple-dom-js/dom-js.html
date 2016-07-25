@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="dom-js.css" media="screen" title="no title" charset="utf-8">
+
     <meta charset="utf-8">
     <title>Simple DOM JS</title>
+
+    <style media="screen">
+      .click-me {
+        border: solid 1px black;
+        display: inline-block;
+        padding: 20px;
+      }
+
+      .toggled {
+        color: green;
+      }
+
+      .show-hide {
+        margin-top: 50px;
+        border: solid 1px black;
+        padding: 10px;
+      }
+
+      .show-hide li {
+        background-color: #EEE;
+        border: solid 1px #CCC;
+        padding: 5px;
+        margin: 5px 0;
+      }
+
+      .hidden-list {
+        display: none;
+      }
+    </style>
   </head>
   <body>
 
+    <h1>Simple JS Exercises</h1>
+
+    <div class="click-me">
+      Click Me
+    </div>
+
+    <div class="show-hide">
+      <button type="button" name="button">Weekdays</button>
+
+      <ul>
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursdsay</li>
+        <li>Friday</li>
+      </ul>
+
+    </div>
 
 
 
 
-    <script  type="text/javascript">
-      
+
+    <script src="show-hide.js" type="text/javascript">
+    </script>
+    <script  src="dom-js.js "type="text/javascript">
     </script>
   </body>
 </html>

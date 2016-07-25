@@ -1,5 +1,5 @@
 
-var bob = document.querySelector('div');
+var bob = document.querySelector('.bob');
 var sue = document.querySelector('.sue');
 var fred = document.querySelector('.fred');
 var jack = document.querySelector('.jack');
