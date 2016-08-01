@@ -15,7 +15,7 @@ function increaseNum () {
     return;
   }
 
-  value ++;
+  value++;
   number.textContent = value;
 
 }
@@ -28,7 +28,7 @@ function decreaseNum () {
     return
   }
 
-  value -- 1;
+  value--;
   number.textContent = value;
 
 }
