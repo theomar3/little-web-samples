@@ -9,11 +9,18 @@ if (this.ClickTimes === undefined) this.ClickTimes = {};
   function clicked() {
     var date = new Date();
 
+
+
     //Fix this stuff
-    var hours; //get this
-    var minutes; //get this
-    var seconds; //get this
-    var differenceInMilliseconds; //calculate this
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    var startTime = date;
+    var endTime = date - startTime
+
+
+    var differenceInMilliseconds = (startTime - seconds)/1000;
 
     if (clickTimes.length === 0) {
       createListItem(0, hours, minutes, seconds);
