@@ -3,24 +3,21 @@ if (this.ClickTimes === undefined) this.ClickTimes = {};
 
 (function(context) {
 
-  var clickTimes = [];
+
+  var clickTimes = []; //this stores the times into an array
   var clickLogUlDOM;
 
   function clicked() {
-    var date = new Date();
+    var date = new Date(); //gets the current date at that moment down to the millisecond.
 
 
 
     //Fix this stuff
-    var hours = date.getHours();
+    var hours = date.getHours(); 
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
 
-    var startTime = date;
-    var endTime = date - startTime
-
-
-    var differenceInMilliseconds = (startTime - seconds)/1000;
+    var differenceInMilliseconds = date - clickTimes[clickTimes.length - 1]; //this gets the last index (time) and subtracts that current date
 
     if (clickTimes.length === 0) {
       createListItem(0, hours, minutes, seconds);
