@@ -1162,31 +1162,31 @@ function itemsMadeOfWood(material) {
 //   the three broomsticks glass
 //   personalized harry potter glass
 
-function titlesWithNMaterials(materialNumber) {
-  var titlesWithNMaterials = [];
 
-  for(var item of items) {
-    if(item.materials.length > materialNumber) {
-      titlesWithNMaterials.push(item.title);
-    }
+function nMaterials(array, materialNumber) {
+  var listOfItems = array.filter(filterItems);
+
+  function filterItems(item) {
+    return item.materials.length > materialNumber;
   }
-  return titlesWithNMaterials;
+  return listOfItems;
 }
 
-function lotsOfMaterials(materialNumber) {
-  var listOfMaterials = [];
+function nMaterialsTitlesAndMaterials(array) {
+  var result = array.map(titlesAndMaterials);
 
-  for(var item of items) {
-    if(item.materials.length > materialNumber) {
-      listOfMaterials.push(item.materials);
-    }
+  function titlesAndMaterials(item) {
+    return {
+      title: item.title,
+      materials: item.materials
+    };
   }
-  return listOfMaterials;
+  return result;
 }
 
-var titlesWithNMaterials = titlesWithNMaterials(8);
-var listOfMaterials = lotsOfMaterials(8);
-console.log(titlesWithNMaterials, listOfMaterials);
+var listOfItems = nMaterials(items, 8);
+var result = nMaterialsTitlesAndMaterials(listOfItems);
+console.log(result);
 
 
 // ------------------------------------------------------------------------------
