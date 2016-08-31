@@ -36,15 +36,15 @@ QUnit.test( ' Count of the authors whose name begins with the letter K', functio
 
 QUnit.test( 'Compute the average number of published works', function( assert ) {
   var filtered = QUnitPractice.averagePublished();
-  assert.deepEqual(filtered, 13, "Not the right number" );
+  assert.deepEqual(filtered, 436, "Not the right number" );
 });
 
 QUnit.test( 'Compute the average number of published works by English authors', function( assert ) {
   var filtered = QUnitPractice.averageEnglishBooksPublished();
-  assert.deepEqual(filtered, 4, "Not the right number" );
+  assert.deepEqual(filtered, 574, "Not the right number" );
 });
 
 QUnit.test( 'Compute the average number of published works by Japanese authors', function( assert ) {
   var filtered = QUnitPractice.averageJapaneseBooksPublished();
-  assert.deepEqual(filtered, 1, "Not the right number" );
+  assert.deepEqual(filtered, 58, "Not the right number" );
 });

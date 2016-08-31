@@ -106,8 +106,9 @@ if (this.QUnitPractice === undefined) this.QUnitPractice = {};
     for(var author of authors) {
       var booksPublished = author.publishedWorks;
       var totalBooks = total += booksPublished;
+      var totalAuthors = authors.length;
     }
-    var average = Math.floor(totalBooks / booksPublished);
+    var average = Math.floor(totalBooks / totalAuthors);
     return average;
   }
 
@@ -117,9 +118,10 @@ if (this.QUnitPractice === undefined) this.QUnitPractice = {};
       if(author.language === "English") {
         var booksPublished = author.publishedWorks;
         var totalBooks = total += booksPublished;
+        var totalEnglishAuthors = author.language.length;
       }
     }
-    var average = Math.floor(totalBooks / booksPublished);
+    var average = Math.floor(totalBooks / totalEnglishAuthors);
     return average;
   }
 
@@ -129,9 +131,10 @@ if (this.QUnitPractice === undefined) this.QUnitPractice = {};
       if(author.language === "Japanese") {
         var booksPublished = author.publishedWorks;
         var totalBooks = total += booksPublished;
+        var totalJapaneseAuthors = author.language.length;
       }
     }
-    var average = Math.floor(totalBooks / booksPublished);
+    var average = Math.floor(totalBooks / totalJapaneseAuthors);
     return average;
   }
 
