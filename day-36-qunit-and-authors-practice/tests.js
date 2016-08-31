@@ -41,10 +41,10 @@ QUnit.test( 'Compute the average number of published works', function( assert ) 
 
 QUnit.test( 'Compute the average number of published works by English authors', function( assert ) {
   var filtered = QUnitPractice.averageEnglishBooksPublished();
-  assert.deepEqual(filtered, 574, "Not the right number" );
+  assert.deepEqual(filtered, 502, "Not the right number" );
 });
 
 QUnit.test( 'Compute the average number of published works by Japanese authors', function( assert ) {
   var filtered = QUnitPractice.averageJapaneseBooksPublished();
-  assert.deepEqual(filtered, 58, "Not the right number" );
+  assert.deepEqual(filtered, 470, "Not the right number" );
 });
