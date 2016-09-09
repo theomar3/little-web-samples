@@ -58,7 +58,9 @@ body {
 	margin: 30px auto;
 }
 
-
+a {
+	text-decoration: none;
+}
 
 .outer {
 	float: left;
