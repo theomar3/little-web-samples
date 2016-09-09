@@ -1,5 +1,5 @@
 'use strict';
-if (this.Templating === undefined) this.Templating = {};
+if (this.Stocks === undefined) this.Stocks = {};
 
 (function(context) {
 
@@ -55,4 +55,4 @@ if (this.Templating === undefined) this.Templating = {};
 
   context.start = start;
 
-})(window.Templating);
+})(window.Stocks);
