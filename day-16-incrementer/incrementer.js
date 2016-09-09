@@ -25,7 +25,7 @@ function decreaseNum () {
 
   if (value <= 0) {
     value =0 ;
-    return
+    return;
   }
 
   value--;
