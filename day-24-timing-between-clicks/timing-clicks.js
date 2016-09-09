@@ -5,19 +5,17 @@ if (this.ClickTimes === undefined) this.ClickTimes = {};
 
 
   var clickTimes = []; //this stores the times into an array
-  var clickLogUlDOM;
+  var $clickLogUlDOM;
 
   function clicked() {
     var date = new Date(); //gets the current date at that moment down to the millisecond.
 
-
-
-    //Fix this stuff
-    var hours = date.getHours(); 
+    var hours = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
 
-    var differenceInMilliseconds = date - clickTimes[clickTimes.length - 1]; //this gets the last index (time) and subtracts that current date
+    var differenceInMilliseconds =
+    date - clickTimes[clickTimes.length - 1]; //this gets the last index (time) and subtracts that current date
 
     if (clickTimes.length === 0) {
       createListItem(0, hours, minutes, seconds);
@@ -30,16 +28,22 @@ if (this.ClickTimes === undefined) this.ClickTimes = {};
   }
 
   function createListItem(millisecondDiff, hours, minutes, seconds) {
-    var li = document.createElement('li');
-    li.textContent = millisecondDiff
-    + ' - '
-    + hours
-    + ':'
-    + minutes
-    + ':'
-    + seconds;
 
-    clickLogUlDOM.appendChild(li);
+    var $templateHtml = $('#clock-template').html();
+    var htmlFactory = _.template($templateHtml);
+    var html = htmlFactory(
+      {
+        millisecondDiff: millisecondDiff,
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+      }
+    );
+
+
+    $clickLogUlDOM.append(html);
+
+
   }
 
   function start() {
@@ -47,10 +51,10 @@ if (this.ClickTimes === undefined) this.ClickTimes = {};
     //Call your code here
     console.log('starting!', context);
 
-    var button = document.querySelector('#click-me');
-    clickLogUlDOM = document.querySelector('#click-log');
+    var $button = $('#click-me');
+    $clickLogUlDOM = $('#click-log');
 
-    button.addEventListener('click', clicked);
+    $button.on('click', clicked);
 
   }
 
