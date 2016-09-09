@@ -29,7 +29,7 @@ if (window.DataManipulator === undefined) window.DataManipulator = {};
     return sum;
   }
 
-  
+
 
 
 
