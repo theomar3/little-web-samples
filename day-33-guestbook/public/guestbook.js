@@ -3,19 +3,21 @@ if (this.GuestBook === undefined) this.GuestBook = {};
 
 (function(context) {
 
-
-
-
-
-  function templateEntry(firstName, lastName, guestId) {
+  function templateEntry(firstName, lastName, guestId, hasGivenGift) {
     console.log('templating', guestId);
+
+    var className = '';
+    if (hasGivenGift == 'true') {
+      className = 'has-given-gift';
+    }
     var templateHtml = $('#guestlist-template').html();
     var templateFunc = _.template(templateHtml);
     var html = templateFunc(
       {
         guestId: guestId,
         firstName: firstName,
-        lastName: lastName
+        lastName: lastName,
+        className: className
       }
     );
     var $names = $('#names');
@@ -32,11 +34,12 @@ if (this.GuestBook === undefined) this.GuestBook = {};
       method: 'POST',
       data: {
         firstName: $firstName.val(),
-        lastName: $lastName.val()
+        lastName: $lastName.val(),
+        hasGivenGift: false
       }
     });
     promise.done(function(data) {
-      templateEntry($firstName.val(), $lastName.val(), data.guestId );
+      templateEntry($firstName.val(), $lastName.val(), data.guestId, false );
     });
   }
 
@@ -49,7 +52,7 @@ if (this.GuestBook === undefined) this.GuestBook = {};
 
       data.forEach(function(entry) {
         console.log('the entry', entry)
-        templateEntry(entry.firstName, entry.lastName, entry.guestId);
+        templateEntry(entry.firstName, entry.lastName, entry.guestId, entry.hasGivenGift);
       });
     });
   }
@@ -63,6 +66,22 @@ if (this.GuestBook === undefined) this.GuestBook = {};
         url: '/api/guestbookentry/' + id,
         method: 'DELETE'
       });
+
+      //get the parent of the delete button and remove it.
+      $target.parent().remove();
+  }
+
+  function giftClicked(evt) {
+    var $target = $(evt.target);
+    var id = $target.data('id');
+
+    $.ajax({
+      url: '/api/guestbookentry/' + id,
+      method: 'PUT'
+
+    });
+
+    $target.parent().toggleClass('has-given-gift');
   }
 
 
@@ -72,10 +91,11 @@ if (this.GuestBook === undefined) this.GuestBook = {};
     loadExistingData();
 
     var $signInButton = $('#sign-in-button');
-
     $signInButton.on('click', signIn)
 
-    $('#names').on('click', deleteClicked);
+    $('#names').on('click','.delete-button', deleteClicked);
+    $('#names').on('click','.gave-gift-button', giftClicked);
+
   }
 
   context.start = start;

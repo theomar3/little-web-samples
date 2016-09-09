@@ -1,0 +1,45 @@
+h1 {
+  font-family: sans-serif;
+}
+
+.container {
+  border: 1px solid black;
+
+}
+
+label {
+  margin: 10px 0 10px 3px;
+  display: block;
+}
+
+input {
+  padding: 10px;
+  display: block;
+}
+
+#sign-in-button {
+  padding: 5px;
+  display: block;
+}
+
+ol {
+  border: 1px solid #DDD;
+}
+
+li {
+  padding: 20px;
+}
+
+li:nth-child(odd) {
+  background-color: #EEE;
+}
+
+.li button {
+  float: right;
+  margin-top: 0px;
+}
+
+.gift-given {
+  color: green;
+  font-weight: bold;
+}

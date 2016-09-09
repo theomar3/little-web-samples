@@ -39,3 +39,8 @@ li button {
   float: right;
   margin-top: 0px;
 }
+
+.has-given-gift {
+  font-weight: bold;
+  color: green;
+}
