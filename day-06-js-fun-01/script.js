@@ -1,8 +1,4 @@
-console.log("loaded!");
 
-var sum = 8 + 37;
-
-console.log(sum);
 
 var p = document.querySelector("p");
 console.log(p);
