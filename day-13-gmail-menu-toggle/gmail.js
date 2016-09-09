@@ -1,90 +1,23 @@
 var theList = document.querySelector('#the-list');
 
 theList.addEventListener('click', function(evt){
+
+  //Find and de-select any currently selected list items
   var currentLI = document.querySelector('.red');
-  if(currentLI !== null) {
+  console.log(currentLI);
+
+  if (currentLI === null) {
+    //do nothing
+    console.log('there was nothing currently selected, so not removing a class')
+  }
+  else {
+    console.log('there was something selected, so now removing the red class')
     currentLI.classList.remove('red');
+
   }
 
-
+  //select current list item
+  console.log('adding the red class to the newly selected item')
   evt.target.classList.add('red')
 
 });
-
-
-
-
-// var inbox = document.querySelector('#inbox');
-// var starred = document.querySelector('#starred');
-// var important = document.querySelector('#important');
-// var sentMail = document.querySelector('#sent-mail');
-// var draft = document.querySelector('#draft');
-// var circles = document.querySelector('#circles');
-//
-//
-// function redInbox() {
-//   inbox.classList.toggle('red');
-//   starred.classList.remove('red');
-//   important.classList.remove('red');
-//   sentMail.classList.remove('red');
-//   draft.classList.remove('red');
-//   circles.classList.remove('red');
-//
-// };
-//
-// function redStarred() {
-//   inbox.classList.remove('red');
-//   starred.classList.toggle('red');
-//   important.classList.remove('red');
-//   sentMail.classList.remove('red');
-//   draft.classList.remove('red');
-//   circles.classList.remove('red');
-//
-// };
-//
-// function redImportant() {
-//   inbox.classList.remove('red');
-//   starred.classList.remove('red');
-//   important.classList.toggle('red');
-//   sentMail.classList.remove('red');
-//   draft.classList.remove('red');
-//   circles.classList.remove('red');
-//
-// };
-//
-// function redSentMail() {
-//   inbox.classList.remove('red');
-//   starred.classList.remove('red');
-//   important.classList.remove('red');
-//   sentMail.classList.toggle('red');
-//   draft.classList.remove('red');
-//   circles.classList.remove('red');
-//
-// };
-//
-// function redDraft() {
-//   inbox.classList.remove('red');
-//   starred.classList.remove('red');
-//   important.classList.remove('red');
-//   sentMail.classList.remove('red');
-//   draft.classList.toggle('red');
-//   circles.classList.remove('red');
-//
-// };
-//
-// function redCircles() {
-//   inbox.classList.remove('red');
-//   starred.classList.remove('red');
-//   important.classList.remove('red');
-//   sentMail.classList.remove('red');
-//   draft.classList.remove('red');
-//   circles.classList.toggle('red');
-//
-// };
-//
-// inbox.addEventListener('click', redInbox);
-// starred.addEventListener('click', redStarred);
-// important.addEventListener('click', redImportant);
-// sentMail.addEventListener('click', redSentMail);
-// draft.addEventListener('click', redDraft);
-// circles.addEventListener('click', redCircles);
