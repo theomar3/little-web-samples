@@ -15,7 +15,7 @@ QUnit.test( 'Count the number of Russian writers', function( assert ) {
 });
 
 QUnit.test( 'Count the number of authors who wrote over 500 books', function( assert ) {
-  var filtered = QUnitPractice.over500();
+  var filtered = QUnitPractice.countOfAuthorsWhoWroteOverNBooks(authors, 500);
   assert.deepEqual(filtered, 5, 'Should have returned five results.' );
 });
 

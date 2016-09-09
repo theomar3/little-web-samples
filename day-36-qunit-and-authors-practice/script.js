@@ -24,123 +24,101 @@ if (this.QUnitPractice === undefined) this.QUnitPractice = {};
     { name: 'Georges Simenon', language: 'French', publishedWorks: 500 }
   ];
 
-  function arabicAuthorsCount() {
-    var filteredAuthors = [];
+  function languageOfAuthors(array, language) {
+    var AuthorsWhoWriteIn = array.filter(filterLanguages);
 
-    for (var author of authors) {
-      if (author.language === 'Arabic') {
-        filteredAuthors.push(author);
-      }
+    function filterLanguages(author) {
+      return author.language === language;
     }
 
-    return filteredAuthors.length;
+    return AuthorsWhoWriteIn;
   }
 
+  function arabicAuthorsCount() {
+
+    var arabicAuthors = languageOfAuthors(authors, 'Arabic');
+    return arabicAuthors.length;
+  }
+
+
   function englishAuthorsCount() {
-    var filteredAuthors = [];
-
-    for(var author of authors) {
-      if(author.language === "English") {
-        filteredAuthors.push(author);
-      }
-    }
-    return filteredAuthors.length;
-
+    var englishAuthors = languageOfAuthors(authors, 'English');
+    return englishAuthors.length;
   }
 
   function russianAuthorsCount() {
-    var filteredAuthors = [];
+    var russianAuthors = languageOfAuthors(authors, 'Russian');
+    return russianAuthors.length;
 
-    for(var author of authors) {
-      if(author.language === "Russian") {
-        filteredAuthors.push(author);
-      }
-    }
-    return filteredAuthors.length;
   }
 
-  function over500() {
-    var filteredAuthors = [];
+  function countOfAuthorsWhoWroteOverNBooks(array, n) {
+    var overNBooks = array.filter(filterNBooks);
 
-    for(var author of authors) {
-      if(author.publishedWorks > 500) {
-        filteredAuthors.push(author);
-      }
+    function filterNBooks(author) {
+      return author.publishedWorks > n;
     }
-    return filteredAuthors.length;
+    return overNBooks.length;
   }
 
   function mostWorks() {
     var authorName;
     var workCount = 0;
 
-    for (var author of authors) {
+    authors.forEach(function(author) {
       if(author.publishedWorks > workCount) {
         workCount = author.publishedWorks;
         authorName = author.name;
       }
-    }
+    });
     return authorName;
   }
 
-  function letterA() {
-    var aNames = [];
-    for(var author of authors) {
-      if(author.name.indexOf('A') === 0)
-      aNames.push(author.name);
+  function findAuthorByFirstLetter(array, letter) {
+    var firstLetter = array.filter(filterFirstLetter);
+
+    function filterFirstLetter(author) {
+      return author.name.indexOf(letter) === 0;
     }
-    return aNames.length;
+    return firstLetter.length;
+  }
+
+  function letterA() {
+    return findAuthorByFirstLetter(authors, 'A');
   }
 
   function letterK() {
-    var kNames = [];
-    for(var author of authors) {
-      if(author.name.indexOf('K') === 0)
-      kNames.push(author.name);
-    }
-    return kNames.length;
+    return findAuthorByFirstLetter(authors, 'K');
+
   }
 
+  function totalPublishedWorks(array) {
+    var total = array.reduce(reduceSum, 0);
 
-
-  function averagePublished() {
-    var total = 0;
-    for(var author of authors) {
-      var booksPublished = author.publishedWorks;
-      var totalBooks = total += booksPublished;
-      var totalAuthors = authors.length;
+    function reduceSum(previousTotal, currentTotal) {
+      return previousTotal += currentTotal.publishedWorks;
     }
-    var average = Math.floor(totalBooks / totalAuthors);
-    return average;
+    return total;
   }
+
+  function averagePublished(array) {
+    return totalPublishedWorks(authors) / authors.length;
+  }
+
+  function averageByLanguage(array, language) {
+    var authorsByLanguage = languageOfAuthors(array, language);
+    var publishedWorksCountByLanguage = totalPublishedWorks(authorsByLanguage);
+
+    return publishedWorksCountByLanguage / authorsByLanguage.length;
+  }
+
 
   function averageEnglishBooksPublished() {
-    var totalEnglishAuthors = 0;
-    var totalBooks = 0;
-    for(var author of authors) {
-      if(author.language === "English") {
-        var booksPublished = author.publishedWorks;
-        totalBooks += booksPublished;
-        totalEnglishAuthors++;
-      }
-    }
-    var average = Math.floor(totalBooks / totalEnglishAuthors);
-    return average;
+    return averageByLanguage(authors, 'English');
   }
 
   function averageJapaneseBooksPublished() {
-    var totalBooks = 0;
-    var totalJapaneseAuthors = 0;
-
-    for(var author of authors) {
-      if(author.language === "Japanese") {
-        var booksPublished = author.publishedWorks;
-        totalBooks += booksPublished;
-        totalJapaneseAuthors++;
-      }
-    }
-    var average = Math.floor(totalBooks / totalJapaneseAuthors);
-    return average;
+    return averageByLanguage(authors, 'Japanese');
   }
 
 
@@ -148,7 +126,7 @@ if (this.QUnitPractice === undefined) this.QUnitPractice = {};
   context.arabicAuthorsCount = arabicAuthorsCount;
   context.englishAuthorsCount = englishAuthorsCount;
   context.russianAuthorsCount = russianAuthorsCount;
-  context.over500 = over500;
+  context.countOfAuthorsWhoWroteOverNBooks = countOfAuthorsWhoWroteOverNBooks;
   context.mostWorks = mostWorks;
   context.letterA = letterA;
   context.letterK = letterK;
